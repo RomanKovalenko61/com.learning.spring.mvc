@@ -3,6 +3,7 @@ package com.learning.spring.mvc.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+// CheckEmail - наша аннотация  String - тип данных проверяемого поля
 public class CheckEmailValidator implements ConstraintValidator<CheckEmail, String> {
 
     private String endOfEmail;

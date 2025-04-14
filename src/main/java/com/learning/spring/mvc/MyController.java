@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/employee") // для всех методов контроллера
 public class MyController {
 
     @RequestMapping("/")
@@ -23,6 +23,7 @@ public class MyController {
 //        emp.setName("Ivan");
 //        emp.setSurname("Petrov");
 //        emp.setSalary(500);
+//        model.addAttribute("employee", emp);
         model.addAttribute("employee", new Employee());
         return "ask-emp-detail-view";
     }
@@ -44,12 +45,11 @@ public class MyController {
             return "show-emp-details-view";
         }
     }
-
 //    @RequestMapping("/showDetails")
-//    public String showEmpDetails() {
+//    public String showEmpDetails(@ModelAttribute("employee") Employee emp) {
+//
 //        return "show-emp-details-view";
 //    }
-
 //    @RequestMapping("/showDetails")
 //    public String showEmpDetails(HttpServletRequest request, Model model) {
 //        String empName = request.getParameter("employeeName");
@@ -60,7 +60,7 @@ public class MyController {
 //
 //        return "show-emp-details-view";
 //    }
-
+// Вместо использования HttpServletRequest есть аннотация @RequestParam("...")
 //    @RequestMapping("/showDetails")
 //    public String showEmpDetails(@RequestParam("employeeName") String empName, Model model) {
 //        empName = "Mr. " + empName + " !";
